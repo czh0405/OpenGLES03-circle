@@ -13,6 +13,10 @@
 		5C2B043F1F4C18090052ABBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2B043D1F4C18090052ABBA /* Main.storyboard */; };
 		5C2B04411F4C18090052ABBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C2B04401F4C18090052ABBA /* Assets.xcassets */; };
 		5C2B04441F4C18090052ABBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2B04421F4C18090052ABBA /* LaunchScreen.storyboard */; };
+		5C2B04511F4C18490052ABBA /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 5C2B044C1F4C18490052ABBA /* Shader.fsh */; };
+		5C2B04521F4C18490052ABBA /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 5C2B044D1F4C18490052ABBA /* Shader.vsh */; };
+		5C2B04531F4C18490052ABBA /* GLUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B044F1F4C18490052ABBA /* GLUtils.cpp */; };
+		5C2B04561F4C18760052ABBA /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B04551F4C18760052ABBA /* OpenGLView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,12 @@
 		5C2B04401F4C18090052ABBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C2B04431F4C18090052ABBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C2B04451F4C18090052ABBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C2B044C1F4C18490052ABBA /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		5C2B044D1F4C18490052ABBA /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		5C2B044F1F4C18490052ABBA /* GLUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLUtils.cpp; sourceTree = "<group>"; };
+		5C2B04501F4C18490052ABBA /* GLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLUtils.h; sourceTree = "<group>"; };
+		5C2B04541F4C18760052ABBA /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLView.h; path = "OpenGLES03-球形/OpenGLView.h"; sourceTree = SOURCE_ROOT; };
+		5C2B04551F4C18760052ABBA /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLView.m; path = "OpenGLES03-球形/OpenGLView.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +68,14 @@
 		5C2B04331F4C18090052ABBA /* OpenGLES03-球形 */ = {
 			isa = PBXGroup;
 			children = (
+				5C2B044B1F4C18490052ABBA /* Shader */,
+				5C2B044E1F4C18490052ABBA /* Utils */,
 				5C2B04371F4C18090052ABBA /* AppDelegate.h */,
 				5C2B04381F4C18090052ABBA /* AppDelegate.m */,
 				5C2B043A1F4C18090052ABBA /* ViewController.h */,
 				5C2B043B1F4C18090052ABBA /* ViewController.m */,
+				5C2B04541F4C18760052ABBA /* OpenGLView.h */,
+				5C2B04551F4C18760052ABBA /* OpenGLView.m */,
 				5C2B043D1F4C18090052ABBA /* Main.storyboard */,
 				5C2B04401F4C18090052ABBA /* Assets.xcassets */,
 				5C2B04421F4C18090052ABBA /* LaunchScreen.storyboard */,
@@ -77,6 +91,24 @@
 				5C2B04351F4C18090052ABBA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C2B044B1F4C18490052ABBA /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				5C2B044C1F4C18490052ABBA /* Shader.fsh */,
+				5C2B044D1F4C18490052ABBA /* Shader.vsh */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+		5C2B044E1F4C18490052ABBA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5C2B044F1F4C18490052ABBA /* GLUtils.cpp */,
+				5C2B04501F4C18490052ABBA /* GLUtils.h */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +170,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2B04511F4C18490052ABBA /* Shader.fsh in Resources */,
 				5C2B04441F4C18090052ABBA /* LaunchScreen.storyboard in Resources */,
 				5C2B04411F4C18090052ABBA /* Assets.xcassets in Resources */,
 				5C2B043F1F4C18090052ABBA /* Main.storyboard in Resources */,
+				5C2B04521F4C18490052ABBA /* Shader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,9 +185,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2B04531F4C18490052ABBA /* GLUtils.cpp in Sources */,
 				5C2B043C1F4C18090052ABBA /* ViewController.m in Sources */,
 				5C2B04391F4C18090052ABBA /* AppDelegate.m in Sources */,
 				5C2B04361F4C18090052ABBA /* main.m in Sources */,
+				5C2B04561F4C18760052ABBA /* OpenGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
